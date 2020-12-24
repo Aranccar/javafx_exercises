@@ -8,6 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 public class ContactsModificationController {
@@ -19,6 +21,7 @@ public class ContactsModificationController {
     @FXML private TextField emailTextField;
     @FXML private TextField phoneNumberTextField;
     @FXML private TextField studentIdTextField;
+    @FXML private ImageView imageField;
     @FXML private Text errorMessage;
     @FXML void addContactButtonPressed(ActionEvent event) {
         if (isAnyEntryEmpty()) errorMessage.setText("Please fill all entries");
@@ -30,6 +33,7 @@ public class ContactsModificationController {
             newContact.setEmail(emailTextField.getText().trim());
             newContact.setPhoneNumber(phoneNumberTextField.getText().trim());
             newContact.setStudentId(studentIdTextField.getText().trim());
+            newContact.setImageAddr("noDB.png");
             contacts.add(newContact);
         }
     }
@@ -48,8 +52,8 @@ public class ContactsModificationController {
         }
     }
     public void initialize() {
-        contacts.add(new Contact("Iskender", "Berdiev", "iskender.berdiev@gmail.com", "+996996996996", "520342"));
-        contacts.add(new Contact("Alexander", "theGreat", "alex.makedonskii@alex.mac", "+123123123", "000000"));
+        contacts.add(new Contact("Iskender", "Berdiev", "iskender.berdiev@gmail.com", "+996996996996", "520342", "iskender.jpg"));
+        contacts.add(new Contact("Alexander", "theGreat", "alex.makedonskii@alex.mac", "+123123123", "000000", "alex.jpg"));
         contactsListView.setItems(contacts);
         contactsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contact>() {
             @Override
@@ -60,8 +64,11 @@ public class ContactsModificationController {
                 emailTextField.setText(newValue.getEmail());
                 phoneNumberTextField.setText(newValue.getPhoneNumber());
                 studentIdTextField.setText(newValue.getStudentId());
+                imageField.setImage(new Image(getClass().getResource("images") + "/" + newValue.getImageAddr()));
             }
         });
+        imageField.setImage(new Image(getClass().getResource("images") + "/" + "iskender.jpg"));
+
     }
     public boolean isAnyEntryEmpty() {
         return (firstNameTextField.getText().trim().equals("") ||
@@ -78,17 +85,19 @@ class Contact {
     private String email;
     private String phoneNumber;
     private String studentId;
+    private String imageAddr;
 
     public Contact() {
-        this("", "", "", "", "");
+        this("", "", "", "", "", "");
     }
 
-    public Contact(String firstName, String lastName, String email, String phoneNumber, String studentId) {
+    public Contact(String firstName, String lastName, String email, String phoneNumber, String studentId, String imageAddr) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.studentId = studentId;
+        this.imageAddr = imageAddr;
     }
 
     public String getFirstName() {
@@ -130,6 +139,12 @@ class Contact {
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
+
+    public String getImageAddr() {
+        return imageAddr;
+    }
+
+    public void setImageAddr(String imageAddr) { this.imageAddr = imageAddr; }
 
     @Override
     public String toString() {

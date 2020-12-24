@@ -7,7 +7,6 @@ Some problems need Gluon library. Download and add Gluon libary from https://nex
 ## PS10-Problem-00: Tip Calculator App (sample activity)
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/tip1.png?raw=true)
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/tip2.png?raw=true)
-
 ## PS10-Problem-01: Enhanced Tip Calculator App
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/etip1.png?raw=true)
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/etip2.png?raw=true)
@@ -23,6 +22,9 @@ Some problems need Gluon library. Download and add Gluon libary from https://nex
 ## PS11-Problem-02: Contacts App
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/c1.png?raw=true)
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/c2.png?raw=true)
+## PS11-Problem-03: Contacts App Modification
+![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/cam1.png?raw=true)
+![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/cam2.png?raw=true)
 ## PS11-Problem-04: Tip Calculator Modification
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/tcm1.png?raw=true)
 ![alt text](https://github.com/iberdiev/javafx_exercises/blob/master/src/screenshots/tcm2.png?raw=true)
