@@ -55,8 +55,8 @@ public class PersonUIController implements Initializable {
         updateButton.disableProperty().bind(listView.getSelectionModel().selectedItemProperty().isNull()
             .or(modifiedProperty.not()).or(firstnameTextField.textProperty().isEmpty().or(lastnameTextField.textProperty().isEmpty())
             ));
-        createButton.disableProperty().bind(listView.getSelectionModel().selectedItemProperty().isNotNull()
-            .or(firstnameTextField.textProperty().isEmpty().or(lastnameTextField.textProperty().isEmpty())));
+//        createButton.disableProperty().bind(listView.getSelectionModel().selectedItemProperty().isNotNull()
+//            .or(firstnameTextField.textProperty().isEmpty().or(lastnameTextField.textProperty().isEmpty())));
 
         SampleData.fillSampleData(personList);
 
@@ -138,7 +138,17 @@ public class PersonUIController implements Initializable {
     private void createButtonAction(ActionEvent actionEvent) {
         System.out.println("Create");
         Person person = new Person(firstnameTextField.getText(), lastnameTextField.getText(), notesTextArea.getText(), dateArea.getValue(), (String) gender.getValue());
-        personList.add(person);
+        boolean found = false;
+        for (int i = 0; i < personList.size(); i++) {
+            if (person.equals(personList.get(i))) {
+
+                found = true;
+                break;
+            }
+        }
+        if (!found) personList.add(person);
+        found = false;
+
         // and select it
         listView.getSelectionModel().select(person);
     }

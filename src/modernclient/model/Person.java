@@ -81,11 +81,9 @@ public class Person {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Person person = (Person) obj;
-        return Objects.equals(firstname, person.firstname) &&
-            Objects.equals(lastname, person.lastname) &&
-            Objects.equals(notes, person.notes) &&
-            Objects.equals(birthDate, person.birthDate) &&
-            Objects.equals(gender, person.gender);
+        return firstname.toString().equals(((Person) obj).firstname.toString()) &&
+            lastname.toString().equals(((Person) obj).lastname.toString());
+
     }
 
     @Override
