@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ThreeDimensionalShapes.fxml -->
+<!-- FXML that displays a Box, Cylinder and Sphere -->
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Sphere?>
+
+<Pane fx:id="pane" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PS_2_22_10.PS_2_22_10_Controller">
+    <children>
+
+    </children>
+</Pane>
