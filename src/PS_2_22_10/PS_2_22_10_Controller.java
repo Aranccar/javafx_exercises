@@ -106,8 +106,8 @@ public class PS_2_22_10_Controller {
     }
     private void run() {
         time += 10;
-        time = time == 130000000  ? 0 : time;
-        if (time % 130 == 0) {
+        time = time == 1000000000  ? 0 : time;
+        if (time % 100 == 0) {
             for (int i = 0; i < n; i++) {
                 if (pane.getChildren().get(i).getClass() == Sphere.class) {
                     Sphere s = (Sphere) pane.getChildren().get(i);
