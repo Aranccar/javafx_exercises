@@ -3,7 +3,6 @@ package PS_2_22_10;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -11,7 +10,6 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
-import javafx.scene.transform.Transform;
 import javafx.util.Duration;
 
 import java.security.SecureRandom;
@@ -28,7 +26,6 @@ public class PS_2_22_10_Controller {
     private int[][] box_dim;
     private int[][] cyl_dim;
     private int time;
-    private SmartPane group = new SmartPane();
 
     public void initialize() {
         n = 20;
@@ -159,25 +156,5 @@ public class PS_2_22_10_Controller {
             random.nextInt(256),
             random.nextInt(256),
             .4 + (double) random.nextInt(50) / 100);
-    }
-}
-
-class SmartPane extends Group {
-
-    Rotate r;
-    Transform t = new Rotate();
-
-    void rotateByX(int ang) {
-        r = new Rotate(ang, Rotate.X_AXIS);
-        t = t.createConcatenation(r);
-        this.getTransforms().clear();
-        this.getTransforms().addAll(t);
-    }
-
-    void rotateByY(int ang) {
-        r = new Rotate(ang, Rotate.Y_AXIS);
-        t = t.createConcatenation(r);
-        this.getTransforms().clear();
-        this.getTransforms().addAll(t);
     }
 }

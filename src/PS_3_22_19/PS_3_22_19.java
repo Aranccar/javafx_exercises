@@ -27,9 +27,9 @@ public class PS_3_22_19 extends Application {
         VBox clockBox = new VBox();
         clockBox.setStyle(
             "-fx-background-color: white;" +
-            "-fx-spacing: 25; " +
-            "-fx-padding: 70,70,70,70; " +
-            "-fx-alignment: center"
+                "-fx-spacing: 25; " +
+                "-fx-padding: 70,70,70,70; " +
+                "-fx-alignment: center"
         );
         Label label = new Label("00:00:00");
         label.setFont(new Font("Calibre", 50));
@@ -58,7 +58,6 @@ public class PS_3_22_19 extends Application {
                             }
                         }
                     }
-
                 }),
             new KeyFrame(Duration.seconds(1))
         );
@@ -67,9 +66,9 @@ public class PS_3_22_19 extends Application {
         VBox alarmBox = new VBox();
         alarmBox.setStyle(
             "-fx-background-color: white;" +
-            "-fx-spacing: 25; " +
-            "-fx-padding: 70,70,70,70; " +
-            "-fx-alignment: center");
+                "-fx-spacing: 25; " +
+                "-fx-padding: 70,70,70,70; " +
+                "-fx-alignment: center");
 
         HBox valueContainer = new HBox();
         valueContainer.setStyle(
@@ -116,8 +115,6 @@ public class PS_3_22_19 extends Application {
             if (hours.getValue() != null || hours.getValue() != null) {
                 alarms.add(String.format("%s%s", hours.getValue(), minutes.getValue()));
                 System.out.printf("Alarm is set for %s:%s%n", hours.getValue(),minutes.getValue());
-                hours.setValue(null);
-                minutes.setValue(null);
                 stage.setScene(clock);
             };
         });
